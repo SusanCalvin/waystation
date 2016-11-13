@@ -1,0 +1,3 @@
+# waystation
+
+Intentionally left blank.
