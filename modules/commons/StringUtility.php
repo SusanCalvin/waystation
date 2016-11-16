@@ -1,10 +1,10 @@
 <?php
 
-namespace commons;
-
 /**
- * Page-level DocBlock
+ * StringUtility.php
  */
+
+namespace Commons;
 
 /**
  * La classe contiene funzioni di utilità varie riguardandi le variabili di tipo stringa.
@@ -14,6 +14,7 @@ namespace commons;
  *   ovvero non è composta da SOLI caratteri di controllo, non è nulla, non è vuota e non è composta di soli spazi. Una stringa
  *   che contiene qualche carattere di controllo viene comunque considerata stretta. Non sono ammessi valori tipo numerico.
  *
+ * @author Giorgia <contact@waystation.it>
  * @package commons
  */
 final class StringUtility {
@@ -22,6 +23,7 @@ final class StringUtility {
      * Verifica se una variabile è una stringa in senso stretto.
      *
      * @param mixed $var Variabile da controllare
+     *
      * @return boolean True se la variabile è una stringa in senso stretto, false altrimenti.
      */
     static function isStrictString($var)
@@ -46,8 +48,8 @@ final class StringUtility {
      *
      * @param mixed $var Variabile da controllare
      * @param mixed $defaultValue Valore di default da restituire se la stringa non è una stringa in senso stretto
-     * @return mixed Restituisce la stringa stessa se è una stringa in senso stretto, altrimenti il valore di default
-     * (che potrebbe anche non essere una stringa)
+     *
+     * @return mixed Restituisce la stringa stessa se è una stringa in senso stretto, altrimenti il valore di default (tipo misto)
      */
     static function ifStrictString($var, $defaultValue)
     {

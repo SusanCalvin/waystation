@@ -1,20 +1,21 @@
 <?php
 
-use commons\StringUtility as StringUtility;
+use Commons\StringUtility as StringUtility;
 
 /**
  * @author Giorgia
  */
-class StringUtilityTest extends PHPUnit_Framework_TestCase {
+class StringUtilityTest extends PHPUnit_Framework_TestCase
+{
 
     public function setUp()
     {
-
+        
     }
 
     public function tearDown()
     {
-
+        
     }
 
     /**
@@ -122,11 +123,9 @@ class StringUtilityTest extends PHPUnit_Framework_TestCase {
     {
         $var = array(null, '', ' ', '    ', 42, 42.42, true, false, "\x0", "\000\001\002\003\004\005\006\007\010\011\012\013\014\015\016\017\020\021\022\023\024\025\026\027\030\031\032\032\033\034\035\036\037");
 
-        foreach ($var as $value)
-        {
+        foreach ($var as $value) {
             $this->assertSame(StringUtility::ifStrictString($value, 'Answer to the Ultimate Question of Life, the Universe, and Everything'), 'Answer to the Ultimate Question of Life, the Universe, and Everything');
             $this->assertNotSame(StringUtility::ifStrictString('Answer to the Ultimate Question of Life, the Universe, and Everything', $value), $value);
         }
     }
-
 }
