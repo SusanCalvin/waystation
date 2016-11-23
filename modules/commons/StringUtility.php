@@ -1,9 +1,7 @@
 <?php
-
 /**
  * StringUtility.php
  */
-
 namespace Commons;
 
 /**
@@ -14,10 +12,11 @@ namespace Commons;
  *   ovvero non è composta da SOLI caratteri di controllo, non è nulla, non è vuota e non è composta di soli spazi. Una stringa
  *   che contiene qualche carattere di controllo viene comunque considerata stretta. Non sono ammessi valori tipo numerico.
  *
- * @author Giorgia <contact@waystation.it>
- * @package commons
+ * @author Giorgia
+ * @package Commons
  */
-final class StringUtility {
+final class StringUtility
+{
 
     /**
      * Verifica se una variabile è una stringa in senso stretto.
@@ -35,12 +34,7 @@ final class StringUtility {
          * - is_string(integer) = false
          * - is_string(fload)   = false
          */
-        if (!is_string($var) || ctype_cntrl($var) || trim($var) === '')
-        {
-            return false;
-        }
-
-        return true;
+        return !(!is_string($var) || ctype_cntrl($var) || trim($var) === '');
     }
 
     /**
@@ -55,5 +49,4 @@ final class StringUtility {
     {
         return self::isStrictString($var) ? $var : $defaultValue;
     }
-
 }
